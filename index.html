@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<h1>Hello web components</h1>
+<div id="root">
+
+<script type="text/javascript">
+  const root = document.getElementById('root');
+
+  for (let i = 0; i < 4; i++) {
+    const wrapper = document.createElement('div');
+    const text = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum qui modi non saepe sint incidunt sunt nemo ipsam unde, ut ea, minus dolores nulla, laboriosam explicabo placeat. Architecto, laudantium, quidem?');
+    const customElement = document.createElement('collapse-expand');
+    customElement.setAttribute('text-when-close', `Chapter ${i+1}`);
+
+    customElement.appendChild(text);
+    root.appendChild(wrapper.appendChild(customElement))
+  }
+
+</script>
+<script src="script/index.js"></script>
+</body>
+</html>
